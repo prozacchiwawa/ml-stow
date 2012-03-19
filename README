@@ -1,0 +1,11 @@
+Very easy way to try out software without polluting /usr/local
+
+1) configure && make && install with --prefix=/usr/local/pkg/foo-0.99
+2) stow -t /usr/local /usr/local/pkg/foo-0.99
+
+Remove it:
+
+3) stow -t /usr/local -u /usr/local/pkg/foo-0.99
+
+Like gnu stow, my stow only affects symlinks, but it doesn't try to be
+clever about verifying the source of a symlink or consolidate directories.
